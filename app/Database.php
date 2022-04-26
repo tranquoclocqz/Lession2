@@ -14,7 +14,7 @@ class Database
             'dbname' => DB_NAME,
             'port' => DB_PORT,
             'prefix' => DB_PREFIX,
-            'charset' => 'utf8'
+            'charset' => 'utf8' 
         ]);
     }
 }
