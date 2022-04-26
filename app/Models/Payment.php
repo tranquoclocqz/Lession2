@@ -1,8 +1,9 @@
 <?php
 
 namespace App\Models;
+use App\Database;
 
-class Payment
+class Payment extends Database
 {
     protected $id;
     protected $date_from;
@@ -13,16 +14,8 @@ class Payment
 
     public function __construct()
     {
-        $this->db = new \PDODb([
-            'type' => 'mysql',
-            'host' => DB_HOST,
-            'username' => DB_USER,
-            'password' => DB_PASS,
-            'dbname' => DB_NAME,
-            'port' => DB_PORT,
-            'prefix' => DB_PREFIX,
-            'charset' => 'utf8'
-        ]);
+        $db = new Database();
+        $this->db = $db->connect();
     }
 
     // GET METHODS
