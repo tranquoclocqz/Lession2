@@ -4,6 +4,7 @@ namespace App;
 
 class Database
 {
+    // conntect databse
     public function connect()
     {
         return new \PDODb([
