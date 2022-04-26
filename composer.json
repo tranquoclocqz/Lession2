@@ -3,7 +3,7 @@
     "description": "Simple MVC PHP Framework",
     "authors": [{
         "name": "Tran Quoc Loc",
-        "email": "tranquocloc@gmail.com"
+        "email": "tranquocloc.qz@gmail.com"
     }],
     "autoload": {
         "psr-4": {
