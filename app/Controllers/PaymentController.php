@@ -10,15 +10,14 @@ class PaymentController
     public function index()
     {
         $request = Request::createFromGlobals();
-        $payment = new Payment();
-        $all_data = $payment->getAll();
         $flash = [];
         if (
             $request->query->has("date_from") &&
             $request->query->has("date_to") &&
             $request->query->has("amount")
         ) {
-            $valid = $this->isPayment($all_data, $request->query->get("date_from"), $request->query->get("date_to"), $request->query->get("amount"));
+            $payment = new Payment();
+            $valid = $this->isPayment($payment->getAll(), $request->query->get("date_from"), $request->query->get("date_to"), $request->query->get("amount"));
             if ($valid) {
                 $flash = ['status' => 1, 'flash' => 'success', 'message' => 'Đủ điều kiện đăng ký'];
             } else {
